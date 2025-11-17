@@ -334,7 +334,7 @@
               <MiscControls></MiscControls>
               <Define>STM32F10X_HD,USE_STDPERIPH_DRIVER</Define>
               <Undefine></Undefine>
-              <IncludePath>..\CORE;..\USER;..\STM32F10x_FWLib\inc;..\FreeRTOS\include;..\HARDWARE\BSP\BSP_BOARD;..\HARDWARE\ABS\ABS_BOARD;..\HARDWARE\BSP\LED;..\HARDWARE\BSP\UART;..\HARDWARE\BSP\NVIC;..\HARDWARE\BSP\EXTI;..\HARDWARE\BSP\KEY;..\HARDWARE\ABS\TIMER;..\APP</IncludePath>
+              <IncludePath>..\CORE;..\USER;..\STM32F10x_FWLib\inc;..\FreeRTOS\include;..\APP;..\HARDWARE\BSP\BSP_BOARD;..\HARDWARE\ABS\ABS_BOARD;..\HARDWARE\BSP\LED;..\HARDWARE\BSP\UART;..\HARDWARE\BSP\NVIC;..\HARDWARE\BSP\EXTI;..\HARDWARE\BSP\KEY;..\HARDWARE\ABS\TIMER;..\HARDWARE\ABS\KEY</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -681,6 +681,16 @@
               <FileName>abs_timer.h</FileName>
               <FileType>5</FileType>
               <FilePath>..\HARDWARE\ABS\TIMER\abs_timer.h</FilePath>
+            </File>
+            <File>
+              <FileName>abs_key.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\HARDWARE\ABS\KEY\abs_key.c</FilePath>
+            </File>
+            <File>
+              <FileName>abs_key.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\HARDWARE\ABS\KEY\abs_key.h</FilePath>
             </File>
           </Files>
         </Group>

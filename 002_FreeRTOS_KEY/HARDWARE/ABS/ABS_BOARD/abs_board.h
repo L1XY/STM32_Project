@@ -3,6 +3,7 @@
 
 #include "stdio.h"
 #include "abs_timer.h"
+#include "abs_key.h"
 
 void Abs_Init(void);
 

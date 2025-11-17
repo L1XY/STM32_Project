@@ -1,29 +1,39 @@
 #include "FreeRTOS.h"
 #include "task.h"
 #include "task_10ms.h"
-#include "bsp_led.h"
+#include "bsp_board.h"
 #include "abs_board.h"
 
-void SW_Timer_Test_Callback(void)
+void Abs_Timer_Test_Callback(void)
 {
     printf("Timer Out Event. \n");
 }
 
 void App_Task_10ms(void *pvParameters)
 {
-    uint8_t i;
+    uint8_t i, j;
+    Abs_Key_QueueItem_t test_key_queue_item;
     TickType_t lastWakeTime = xTaskGetTickCount();
-    Abs_Timer_Start(ABS_TIMER_ID_TEST, ABS_TIMER_WK_CYCLE, 500, SW_Timer_Test_Callback);
+    Abs_Timer_Start(ABS_TIMER_ID_TEST, ABS_TIMER_WK_CYCLE, 2000, Abs_Timer_Test_Callback);
     while (1)
     {
         vTaskDelayUntil(&lastWakeTime, 10);
-        Abs_Timer_MainFunction();
         i++;
-        if (i == 50)
+        if (i >= 50)
         {
             i = 0;
+            j++;
+            if (j >= 100)
+            {
+                j = 0;
+            }
+            test_key_queue_item.key_index = j;
+            test_key_queue_item.event = (Abs_Key_Event_t)(j % 5);
+            Abs_Key_Event_Enqueue(&test_key_queue_item);
             Bsp_Led_Flip(LED0);
             Bsp_Led_Flip(LED1);
         }
+        Abs_Key_MainFunction();
+        Abs_Timer_MainFunction();
     }
 }
