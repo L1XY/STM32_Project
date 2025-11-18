@@ -29,7 +29,10 @@ void App_Task_10ms(void *pvParameters)
             }
             test_key_queue_item.key_index = j;
             test_key_queue_item.event = (Abs_Key_Event_t)(j % 5);
-            Abs_Key_Event_Enqueue(&test_key_queue_item);
+            if (Abs_Key_Event_Enqueue(&test_key_queue_item) == ABS_KEY_QUEUE_OK)
+            {
+                printf("Abs_Key_Event_Enqueue, key_index = %d, event = %d \r\n", test_key_queue_item.key_index, test_key_queue_item.event);
+            }
             Bsp_Led_Flip(LED0);
             Bsp_Led_Flip(LED1);
         }

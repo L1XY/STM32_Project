@@ -37,8 +37,8 @@ uint8_t Abs_Key_Event_Enqueue(Abs_Key_QueueItem_t *item)
     }
     else
     {
-        Abs_Key_Queue.rear = (Abs_Key_Queue.rear + 1) % ABS_KEY_QUEUE_SIZE;
         (void)memcpy(&(Abs_Key_Queue.item_data[Abs_Key_Queue.rear]), item, sizeof(Abs_Key_QueueItem_t));
+        Abs_Key_Queue.rear = (Abs_Key_Queue.rear + 1) % ABS_KEY_QUEUE_SIZE;
     }
     return ret;
 }
@@ -77,6 +77,6 @@ void Abs_Key_MainFunction(void)
     Abs_Key_QueueItem_t abs_key_queue_item;
     if (Abs_Key_Event_Dequeue(&abs_key_queue_item) == ABS_KEY_QUEUE_OK)
     {
-        printf("key_index = %d, event = %d \r\n", abs_key_queue_item.key_index, abs_key_queue_item.event);
+        printf("Abs_Key_Event_Dequeue, key_index = %d, event = %d \r\n", abs_key_queue_item.key_index, abs_key_queue_item.event);
     }
 }
