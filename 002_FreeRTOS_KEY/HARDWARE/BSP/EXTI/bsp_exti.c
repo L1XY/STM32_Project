@@ -1,6 +1,7 @@
 #include "bsp_exti.h"
 #include "bsp_led.h"
 #include "bsp_key.h"
+#include "abs_key.h"
 
 typedef struct
 {
@@ -74,6 +75,7 @@ void EXTI4_IRQHandler(void) // E4
     if (EXTI_GetITStatus(EXTI_Line4) != RESET)
     {
         EXTI_ClearITPendingBit(EXTI_Line4);
+        Abs_Key_ProcessState(KEY0, Bsp_Key_GetState(KEY0));
     }
 }
 
@@ -82,6 +84,7 @@ void EXTI3_IRQHandler(void) // E3
     if (EXTI_GetITStatus(EXTI_Line3) != RESET)
     {
         EXTI_ClearITPendingBit(EXTI_Line3);
+        Abs_Key_ProcessState(KEY1, Bsp_Key_GetState(KEY1));
     }
 }
 
@@ -90,6 +93,7 @@ void EXTI2_IRQHandler(void) // E2
     if (EXTI_GetITStatus(EXTI_Line2) != RESET)
     {
         EXTI_ClearITPendingBit(EXTI_Line2);
+        Abs_Key_ProcessState(KEY2, Bsp_Key_GetState(KEY2));
     }
 }
 
@@ -98,5 +102,6 @@ void EXTI0_IRQHandler(void) // A0
     if (EXTI_GetITStatus(EXTI_Line0) != RESET)
     {
         EXTI_ClearITPendingBit(EXTI_Line0);
+        Abs_Key_ProcessState(KEY3, Bsp_Key_GetState(KEY3));
     }
 }

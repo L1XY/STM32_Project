@@ -692,6 +692,26 @@
               <FileType>5</FileType>
               <FilePath>..\HARDWARE\ABS\KEY\abs_key.h</FilePath>
             </File>
+            <File>
+              <FileName>abs_key_cfg.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\HARDWARE\ABS\KEY\abs_key_cfg.c</FilePath>
+            </File>
+            <File>
+              <FileName>abs_key_cfg.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\HARDWARE\ABS\KEY\abs_key_cfg.h</FilePath>
+            </File>
+            <File>
+              <FileName>abs_key_callback.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\HARDWARE\ABS\KEY\abs_key_callback.c</FilePath>
+            </File>
+            <File>
+              <FileName>abs_key_callback.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\HARDWARE\ABS\KEY\abs_key_callback.h</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
