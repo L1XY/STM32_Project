@@ -13,3 +13,5 @@
 **《004_FreeRTOS_SPI》**：新增SPI驱动，通过按键回调函数实现读取W25Q128的MID和DID的功能。
 
 **《005_FreeRTOS_OLED》**：移植“江协科技”的OLED显示屏。
+
+**《006_FreeRTOS_ADC》**：新增ADC驱动，通过DMA读取转换完成的ADC多通道数据到数组中，应用层直接读取数组。
